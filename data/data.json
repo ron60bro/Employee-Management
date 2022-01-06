@@ -1,0 +1,200 @@
+{
+  "project": [
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "designation": "",
+      "doj": "",
+      "pname": "Guru",
+      "cname": "GUru",
+      "start": "iewhiew",
+      "end": "fgegfue",
+      "eid": "feuwfguwei",
+      "tech": "guewgfuw",
+      "status": "gfuwgfuie",
+      "id": 1
+    },
+    {
+      "pname": "",
+      "cname": "gg",
+      "start": "",
+      "end": "",
+      "eid": "zzz",
+      "tech": "",
+      "status": "",
+      "id": 3
+    },
+    {
+      "pname": "",
+      "cname": "",
+      "start": "",
+      "end": "",
+      "eid": "",
+      "tech": "fewffw",
+      "status": "",
+      "id": 4
+    },
+    {
+      "pname": "",
+      "cname": "",
+      "start": "2022-01-08",
+      "end": "2022-01-08",
+      "eid": "",
+      "ename": "",
+      "tech": "",
+      "status": "",
+      "id": 5
+    }
+  ],
+  "client": [
+    {
+      "name": "Guruprasad Ankolekar",
+      "company": "",
+      "phone": "9845730361",
+      "address": "Behind Syndicate Bank",
+      "mail": "aguruprasad41@gmail.com",
+      "id": 1
+    }
+  ],
+  "user": [
+    {
+      "email": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 16
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 17
+    },
+    {
+      "name": "",
+      "mobile": "",
+      "email": "",
+      "password": "",
+      "id": 18
+    }
+  ],
+  "users": [
+    {
+      "name": "bxxbsu",
+      "email": "",
+      "phone": "",
+      "designation": "",
+      "doj": "",
+      "id": 1,
+      "pname": "ioeiiefioefo",
+      "cname": "cnjwenjwe",
+      "start": "2022-01-07",
+      "end": "2022-01-07"
+    }
+  ]
+}

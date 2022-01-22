@@ -27,13 +27,13 @@ function  Client () {
     { headerName: "Name", field: "name", },
     { headerName: "Company", field: "company", },
     { headerName: "Phone", field: "phone" },
-    { headerName: "Address", field: "Address" },
+    { headerName: "Address", field: "address" },
     { headerName: "Mail", field: "mail" },
    
     {
       headerName: "Actions", field: "id", cellRendererFramework: (params) => <div>
-        <Button variant="contained"  color="primary" onClick={() => handleUpdate(params.data)} className='btn btn-info' style={{marginRight:"10px"}}><i className="fa fa-edit"></i></Button>
-        <Button variant="contained" color="secondary" onClick={() => handleDelete(params.value)}><i className="fa fa-close"></i></Button>
+       <button className="btn btn-warning"style={{marginRight:"5px"}} onClick={() => handleUpdate(params.data)} ><i className="fa fa-edit"></i></button>
+        <button className="btn btn-danger"onClick={() => handleDelete(params.value)} ><i className="fa fa-close"></i></button>
       </div>
     }
   ]

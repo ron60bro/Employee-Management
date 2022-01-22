@@ -6,13 +6,22 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import 'boxicons';
-
+import {Provider} from 'react-redux';
+import store from './component/store';
+import { BrowserRouter } from 'react-router-dom';
+import Remainder from "./remainder";
 ReactDOM.render(
-  <React.StrictMode>
+  
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    
+  </Provider>
+  ,
   document.getElementById("root")
 );
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

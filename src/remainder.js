@@ -8,23 +8,43 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Grid, Button } from '@material-ui/core'
 import axios from 'axios';
 import Home from './home.js';
+import moment from 'moment';
 
-const Remainder = () => {
+//Redux Libraries and part calling
+import { useSelector,useDisptach,connect } from "react-redux";
+import { useParams } from "react-router-dom";
+import store from "./component/store";
+import handleChange from "./component/reducer/handleCart";
+import { FetchUser, userSuccess } from "./component/action";
+
+
+const Remainder = (props) => {
 
     const[reminders,setReminders]=useState([]);
     
-    
+    const value=moment();
 
-    const getReminder=async()=>{
-      const response = await axios.get("http://localhost:1234/project").catch((err)=> console.log("Error ...",err));
-      if(response&& response.data){
-        setReminders(response.data)
-        console.log(response)
-      }
-    }
+    // const getReminder=async()=>{
+    //   const response = await axios.get("http://localhost:1234/project").catch((err)=> console.log("Error ...",err));
+    //   if(response&& response.data){
+    //     setReminders(response.data)
+    //     console.log(response)
+    //   }
+    // }
     useEffect(()=>{
-        getReminder();
+        props.data2();  
+        setReminders(props.data1)  ;
+        
     },[])
+    
+  
+    console.log("qq",props.data1);
+     const twitter=(reminders)=>{
+   if((moment(reminders.end).format()<moment().format())){
+     return false;
+   }else return true;
+     
+     }
 
   return (
 <>
@@ -40,15 +60,21 @@ const Remainder = () => {
         
              
                {
-                                  reminders.map((reminders,idx)=>{
+                                  reminders.filter(twitter).map((reminders,idx)=>{
+                                         
+                                      
                                     return(
+                                      
+                                      
                                       <div className="card nhu " >
-
                                         <div class="card-body motu "  > <div className="alignn">
                                         <div className="alignn" ><box-icon name='pin' type='solid' size="30px" color="blue"></box-icon> Demo project will expire   :
-                                        
-                                          
-                                              {reminders.end}</div>
+                                                { 
+                                                  
+                                                (moment(reminders.end).format('MMMM Do YYYY, h:mm:ss a'))
+                                                
+                                                }
+                                                </div>
                                               </div>
                                            <>
                                            <br/>
@@ -60,50 +86,24 @@ const Remainder = () => {
                                    </div>
                                     )
                                   })
-                                } 
-               
-            
-             {/* <table class="table table-bordered table-striped">
-                <thead>
-                                    <tr >
-                                    <th scope="col-sm" >This process will expire on: </th>
-                                    <th scope="col-sm">Project Date</th>
-                                    <th scope="col-sm">Project Name</th>
-                                    
-                                    
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                {
-                                  reminders.map((reminders,idx)=>{
-                                    return(
-                                    <tr kye={idx}>
-                                    <td>Your Porject Validity {idx}</td>
-                                    
-                                    <tr>{reminders.end}</tr>
-                                    </tr>
-
-                                    )
-                                  })
-                                }
-                                </tbody>
-                                
-</table> */}
-            
-           
-        
+                                }  
         </div>
-       
-          
-      
-         
-        
-
-
     </div>
     </>
   );
 };
 
-export default Remainder;
+const mapStateToProps = (state)=>{
+  console.log("asd",state.init.data)
+  return{
+     data1:state.init.data
+
+  }
+}
+const mapDispatchToProps= dispatch=>{
+  return{
+    data2: ()=>dispatch(FetchUser())
+  }
+}
+export default connect(
+  mapStateToProps,mapDispatchToProps)(Remainder)

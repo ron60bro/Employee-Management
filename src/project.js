@@ -6,13 +6,16 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { Grid, Button } from '@material-ui/core'
 import FormDialog2 from './components/dialog2';
 import Home from './home';
-const initialValue = { pname: "", cname: "", start: "", end: "", eid: "",ename: "", tech: "", status: "" }
+
 
 function  Project () {
+  const initialValue = { pname: "", cname: "", start: "", end: "", eid: "",ename: "", tech: "", status: "" }
   const [gridApi, setGridApi] = useState(null)
   const [tableData, setTableData] = useState(null)
   const [open, setOpen] = React.useState(false);
   const [formData, setFormData] = useState(initialValue)
+  const [formErrors, setFormErrors] = useState({});
+  const[isSubmit,setIsSubmit]=useState(false); 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -43,6 +46,7 @@ function  Project () {
   ]
  
   
+   
   useEffect(() => {
     getUsers()
   }, [])
@@ -74,7 +78,8 @@ function  Project () {
 
     
   }
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
+  
     if (formData.id) {
       
    
@@ -100,7 +105,9 @@ function  Project () {
           getUsers()
         })
     }
-  }
+  
+
+  };
 
   const  defaultColDef = {
     sortable: false,
@@ -121,7 +128,7 @@ function  Project () {
       <Grid align="left" className='mb-3 mr-2 all'>
         <Button variant="contained" color="primary"  onClick={handleClickOpen}> <i class='bx bxs-user-plus'></i>Add Project</Button>
       </Grid>
-      <div className="ag-theme-alpine " style={{ height: '400px', width:'1250px',marginLeft:'80px'}}>
+      <div className="ag-theme-alpine " style={{ height: '750px', width:'1250px',marginLeft:'80px'}}>
         <AgGridReact className="mm"
           rowData={tableData}
           columnDefs={columnDefs}
